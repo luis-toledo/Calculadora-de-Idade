@@ -51,6 +51,12 @@ body{
     border-radius: 8px;
 }
 
+.desabilitado{
+    padding: 12px 24px;
+    border: 1px solid #FF0000;
+    border-radius: 8px;
+}
+
 .label{
     font-family: var(---fonte--popins);
     font-weight: 700;
@@ -70,7 +76,7 @@ body{
 
 .button{
     background: var(---cor--roxo);
-    border: none;
+    border: none; 
     border-radius: 216px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
