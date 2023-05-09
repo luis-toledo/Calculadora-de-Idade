@@ -85,17 +85,28 @@ function DefineVariaveis(diaMesAno, valor) {
 
 function calculo() {
 
- const dataInformada = new Date(mesDigitado + "/" + diaDigitado + "/" + anoDigitado);
+  const dataInformada = new Date(mesDigitado + "/" + diaDigitado + "/" + anoDigitado);
   
   const diffTime = Math.abs(dataInformada - date);
-  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-  console.log(diffDays);
-  console.log(((diffDays * 0.0027) % 12) * 0.0027 * 100);
 
-  dia.textContent = Math.round(((diffDays * 0.0027) % 12) * 0.0027 * 100);
-  mes.textContent = Math.round((diffDays * 0.0027) / 12);
-  ano.textContent = Math.round(diffDays * 0.0027);
+  const umDia = 24 * 60 * 60 * 1000; // quantidade de milissegundos em um dia
+  const umMes = 30.44 * umDia; // quantidade de milissegundos em um mês (considerando uma média de 30.44 dias por mês)
+  const umAno = 365.24 * umDia; // quantidade de milissegundos em um ano (considerando um ano bissexto a cada 4 anos)
 
-  //ano.textContent =  Math.round(diffDays * 0.0027);
-  // console.log(diffTime);
+  // Calcula a quantidade de anos completos
+  const anosConta = Math.floor(diffTime / umAno);
+  ano.textContent = anosConta; 
+  // Calcula o número de milissegundos restantes
+  const milissegundosRestantes = diffTime % umAno;
+
+  // Calcula a quantidade de meses completos
+  const mesesConta = Math.floor(milissegundosRestantes / umMes);
+  mes.textContent = mesesConta;
+  // Calcula o número de milissegundos restantes
+  const milissegundosRestantes2 = milissegundosRestantes % umMes;
+
+  // Calcula a quantidade de dias completos
+  const diasConta = Math.floor(milissegundosRestantes2 / umDia);
+  dia.textContent = diasConta;
+
 }
