@@ -110,3 +110,73 @@ body{
     margin: 0;
     color: var(---cor--preto);
 }
+
+@media (max-width : 900px){
+    body{
+        max-width: 420px;
+        max-height: 325.5px;
+    }
+    .container-conteudo{
+        border-radius: 12px 12px 100px 12px;
+        padding: 28px;    
+    }
+
+    .entrada--dados--caixa{
+        margin: 4px 16px 0 0;
+        display: flex;
+        flex-direction: column;
+        width: 11%;
+    }
+    
+    .input{
+        padding: 6px 12px;
+        border: 0.5px solid #DCDCDC;
+        border-radius: 4px;
+    }
+    
+    .desabilitado{
+        padding: 6px 12px;
+        border: 0.5px solid #FF0000;
+        border-radius: 4px;
+    }
+    
+    .label{
+        font-family: var(---fonte--popins);
+        font-weight: 700;
+        font-size: 7px;
+        color: var(---cor--cinza);
+    }
+    .button{
+        background: var(---cor--roxo);
+        border: none; 
+        border-radius: 108px;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    }
+    
+    .img-button{
+        padding: 13px;
+    }
+    
+    .secao--saida--de--dados{
+        display: flex;
+        flex-direction: column;
+        gap: 4.5px;
+    }
+    
+    .numero{
+        font-family: var(---fonte--popins);
+        font-weight: 800;
+        font-size: 52px;
+        color: var(---cor--roxo);
+        margin: 0;
+    }
+    
+    .texto{
+        font-family: var(---fonte--popins);
+        font-weight: 800;
+        font-size: 52px;
+        margin: 0;
+        color: var(---cor--preto);
+    }
+
+}
